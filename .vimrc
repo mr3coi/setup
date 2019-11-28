@@ -17,3 +17,12 @@ set encoding=utf-8
 set fileencoding=utf-8
 set nomodeline
 set backspace=indent,eol,start
+set list
+set listchars=tab:\|\ 
+
+syntax on
+highlight SpecialKey ctermfg=240
+
+augroup filedetect
+	au BufRead,BufNewFile *.cuh set filetype=c
+augroup end
