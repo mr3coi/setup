@@ -1,5 +1,8 @@
-set ai
-set ci
+set autoindent
+set cindent
+set smartindent
+set smartcase
+set smarttab
 set relativenumber
 set number
 set hlsearch
@@ -19,13 +22,30 @@ set nomodeline
 set backspace=indent,eol,start
 set list
 set listchars=tab:\|\ 
+set autoread
+set showcmd
+set showmatch
+set backspace=indent,eol,start
+set columns=100
+set mousehide
+set mouse=nicr
+set foldmethod=syntax
+set guifont=Consolas:h12:cANSI:qDRAFT
 
 syntax on
+filetype plugin on
 highlight SpecialKey ctermfg=240
 
 augroup filedetect
 	au BufRead,BufNewFile *.cuh set filetype=c
 augroup end
+
+let g:python_recommended_style = 0
+"let g:tex_flavor='latex'
+"let g:Tex_DefaultTargetFormat='pdf'
+"let g:Tex_MultipleCompileFormats='pdf'
+
+autocmd FileType python setlocal ts=4 sw=4 noet
 
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
