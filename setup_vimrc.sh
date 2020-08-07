@@ -10,3 +10,9 @@ elif [ -e "$VIMRC_DEST" ]; then
 fi
 ln -s `pwd`/.vimrc "$VIMRC_DEST"
 echo `pwd`/.vimrc
+
+# Setup Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+echo "[IMPORTANT] Extra steps remain to complete installation of YouCompleteMe."
+echo "            Refer to installation guides in the repository."

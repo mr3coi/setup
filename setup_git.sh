@@ -3,7 +3,7 @@
 # Refer to 'https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration'
 # for more information.
 
-cp ./git_configs/gitignore_global ~/.gitignore_global
+ln -s `pwd`/git_configs/gitignore_global ~/.gitignore_global
 cp ./git_configs/gitmessage.txt ~/.gitmessage.txt
 
 git config --global user.name SJC
