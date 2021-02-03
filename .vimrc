@@ -17,10 +17,11 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'preservim/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'editorconfig/editorconfig-vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -52,6 +53,7 @@ filetype plugin on
 "
 let g:syntastic_check_on_open = 0
 let g:ycm_confirm_extra_conf = 0
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " SyntasticError / SyntasticWarning respectively
 hi SpellBad cterm=bold      ctermfg=0 ctermbg=1 guifg=Black guibg=Red
@@ -126,22 +128,23 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 
 " =============================================================================
 " cscope settings
-source ~/.vim/plugins/cscope_maps.vim
 
-if has('cscope')
-	set cscopetag cscopeverbose
-
-	if has('quickfix')
-		set cscopequickfix=s-,c-,d-,i-,t-,e-
-	endif
-
-	cnoreabbrev csa cs add
-	cnoreabbrev csf cs find
-	cnoreabbrev csk cs kill
-	cnoreabbrev csr cs reset
-	cnoreabbrev css cs show
-	cnoreabbrev csh cs help
-
-	command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
-endif
+" source ~/.vim/plugins/cscope_maps.vim
+"
+" if has('cscope')
+" 	set cscopetag cscopeverbose
+"
+" 	if has('quickfix')
+" 		set cscopequickfix=s-,c-,d-,i-,t-,e-
+" 	endif
+"
+" 	cnoreabbrev csa cs add
+" 	cnoreabbrev csf cs find
+" 	cnoreabbrev csk cs kill
+" 	cnoreabbrev csr cs reset
+" 	cnoreabbrev css cs show
+" 	cnoreabbrev csh cs help
+"
+" 	command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+" endif
 " =============================================================================
