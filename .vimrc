@@ -87,17 +87,20 @@ set listchars=tab:\|\
 set autoread
 set showcmd
 set showmatch
-set columns=100
+" set columns=100
 set mousehide
 set mouse=nicr
 set foldmethod=syntax
 set guifont=Consolas:h12:cANSI:qDRAFT
 set completeopt-=preview	" Diable scratch space
+set et
 
 syntax on
 " set nocompatible		" Set above at Vundle setting
 " filetype plugin on	" Set above at Vundle setting
 highlight SpecialKey ctermfg=240
+
+:nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " =============================================================================
 " File extensions settings
@@ -129,22 +132,25 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 " =============================================================================
 " cscope settings
 
-" source ~/.vim/plugins/cscope_maps.vim
-"
-" if has('cscope')
-" 	set cscopetag cscopeverbose
-"
-" 	if has('quickfix')
-" 		set cscopequickfix=s-,c-,d-,i-,t-,e-
-" 	endif
-"
-" 	cnoreabbrev csa cs add
-" 	cnoreabbrev csf cs find
-" 	cnoreabbrev csk cs kill
-" 	cnoreabbrev csr cs reset
-" 	cnoreabbrev css cs show
-" 	cnoreabbrev csh cs help
-"
-" 	command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
-" endif
+source ~/.vim/plugin/cscope_maps.vim
+
+" Set below to 1 to use cscope
+let use_cscope = 0
+
+if use_cscope && has('cscope')
+	set cscopetag cscopeverbose
+
+	if has('quickfix')
+		set cscopequickfix=s-,c-,d-,i-,t-,e-
+	endif
+
+	cnoreabbrev csa cs add
+	cnoreabbrev csf cs find
+	cnoreabbrev csk cs kill
+	cnoreabbrev csr cs reset
+	cnoreabbrev css cs show
+	cnoreabbrev csh cs help
+
+	command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+endif
 " =============================================================================
