@@ -132,12 +132,12 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 " =============================================================================
 " cscope settings
 
-source ~/.vim/plugin/cscope_maps.vim
-
 " Set below to 1 to use cscope
 let use_cscope = 0
 
 if use_cscope && has('cscope')
+	source ~/.vim/plugin/cscope_maps.vim
+
 	set cscopetag cscopeverbose
 
 	if has('quickfix')
