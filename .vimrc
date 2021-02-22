@@ -138,7 +138,7 @@ let use_cscope = 0
 if use_cscope && has('cscope')
 	source ~/.vim/plugin/cscope_maps.vim
 
-	set cscopetag cscopeverbose
+	set cscopetag
 
 	if has('quickfix')
 		set cscopequickfix=s-,c-,d-,i-,t-,e-
