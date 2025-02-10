@@ -19,3 +19,6 @@ git config --global help.autocorrect 30		# Runs spell-corrected version in 3 sec
 # Aliases
 git config --global alias.adog 'log --all --decorate --oneline --graph'
 git config --global alias.clog "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global alias.cae "commit --allow-empty"
+git config --global alias.rc "rebase --continue"
+git config --global alias.cc "cherry-pick --continue"
